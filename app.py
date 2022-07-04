@@ -10,8 +10,8 @@ import spacy
 #import en_core_web_sm
 import nltk
 #nltk.download('punkt')
-# nltk.download('wordnet')
-# nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('stopwords')
 #nltk.download('all') 
 from nltk.corpus import stopwords
 from nltk.stem import wordnet
