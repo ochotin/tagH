@@ -19,7 +19,8 @@ import re
 #from nltk.tokenize import ToktokTokenizer
 # from nltk.tokenize import word_tokenize
 import sklearn 
-import joblib
+# import joblib
+from joblib import load
 
 app = Flask(__name__)
 
@@ -62,9 +63,9 @@ def text_cleaner(x, lang="english"):
 
 # Load pre-trained models
 #model_path = "C:/Users/Houda/Documents/OpenClassrooms/P5/"
-vectorizer = joblib.load("./New_tfidf_vectorizer_1.joblib")
-model = joblib.load("./New_model_1.joblib")
-multilabel_binarizer = joblib.load("./New_multilabel_binarizer_1.joblib")
+vectorizer = load("./New_tfidf_vectorizer_1.joblib")
+model = load("./New_model_1.joblib")
+multilabel_binarizer = load("./New_multilabel_binarizer_1.joblib")
 
 @app.route('/')
 def loadPage():
