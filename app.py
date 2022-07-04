@@ -29,7 +29,7 @@ def text_cleaner(x, lang="english"):
     # Remove POS not in "NOUN", "PROPN"
     # x = remove_pos(nlp, x, pos_list)
     # Case normalization
-    # x = x.lower()
+    x = x.lower()
     # Remove unicode characters
     # x = x.encode("ascii", "ignore").decode()
     # Remove English contractions
