@@ -9,6 +9,10 @@ import re
 # import spacy
 #import en_core_web_sm
 import nltk
+#nltk.download('punkt')
+# nltk.download('wordnet')
+nltk.download('stopwords')
+#nltk.download('all') 
 from nltk.corpus import stopwords
 # from nltk.stem import wordnet
 #from nltk.stem import WordNetLemmatizer
@@ -17,10 +21,7 @@ from nltk.corpus import stopwords
 import sklearn 
 # import joblib
 from joblib import load
-#nltk.download('punkt')
-# nltk.download('wordnet')
-nltk.download('stopwords')
-#nltk.download('all') 
+
 
 app = Flask(__name__)
 

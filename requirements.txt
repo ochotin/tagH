@@ -1,4 +1,5 @@
 ﻿flask==2.0.2
 sklearn
 scikit-learn==1.1.1
+nltk
 gunicorn
