@@ -2,7 +2,7 @@
 # import requests
 from flask import Flask, request, render_template
 # import numpy as np
-import re
+# import re
 # from bs4 import BeautifulSoup
 # from langdetect import detect
 # from deep_translator import GoogleTranslator
@@ -19,7 +19,7 @@ import re
 #from nltk.tokenize import ToktokTokenizer
 # from nltk.tokenize import word_tokenize
 import sklearn 
-from joblib import load
+import joblib
 
 app = Flask(__name__)
 
@@ -28,19 +28,19 @@ def text_cleaner(x, lang="english"):
     # Remove POS not in "NOUN", "PROPN"
     # x = remove_pos(nlp, x, pos_list)
     # Case normalization
-    x = x.lower()
+    # x = x.lower()
     # Remove unicode characters
-    x = x.encode("ascii", "ignore").decode()
+    # x = x.encode("ascii", "ignore").decode()
     # Remove English contractions
-    x = re.sub("\'\w+", '', x)
+    # x = re.sub("\'\w+", '', x)
     # Remove ponctuation but not # (for C# for example)
-    x = re.sub('[^\\w\\s#]', '', x)
+    # x = re.sub('[^\\w\\s#]', '', x)
     # Remove links
-    x = re.sub(r'http*\S+', '', x)
+    # x = re.sub(r'http*\S+', '', x)
     # Remove numbers
-    x = re.sub(r'\w*\d+\w*', '', x)
+    # x = re.sub(r'\w*\d+\w*', '', x)
     # Remove extra spaces
-    x = re.sub('\s+', ' ', x)
+    # x = re.sub('\s+', ' ', x)
         
     # Tokenization
     # x = nltk.tokenize.word_tokenize(x)
@@ -62,10 +62,9 @@ def text_cleaner(x, lang="english"):
 
 # Load pre-trained models
 #model_path = "C:/Users/Houda/Documents/OpenClassrooms/P5/"
-vectorizer = load("./New_tfidf_vectorizer_1.joblib")
-model = load("./New_model_1.joblib")
-multilabel_binarizer = load("./New_multilabel_binarizer_1.joblib")
-
+vectorizer = joblib.load("./New_tfidf_vectorizer_1.joblib")
+model = joblib.load("./New_model_1.joblib")
+multilabel_binarizer = joblib.load("./New_multilabel_binarizer_1.joblib")
 
 @app.route('/')
 def loadPage():
@@ -84,7 +83,6 @@ def form_example():
 
     # otherwise handle the GET request
     return render_template('index.html')
-           
-           
+          
 if __name__ == "__main__":
         app.run()
