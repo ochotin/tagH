@@ -81,12 +81,7 @@ def form_example():
         return render_template('index.html', tags_prediction=tags_prediction)
 
     # otherwise handle the GET request
-    return '''
-           <form method="POST">
-               <div><label>Question: <input type="text" name="Question"></label></div>
-               
-               <input type="submit" value="Submit">
-           </form>'''
+    return render_template('index.html')
            
            
 if __name__ == "__main__":
