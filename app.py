@@ -10,12 +10,12 @@ import re
 #import en_core_web_sm
 import nltk
 #nltk.download('punkt')
-# nltk.download('wordnet')
+nltk.download('wordnet')
 nltk.download('stopwords')
 #nltk.download('all') 
 from nltk.corpus import stopwords
-# from nltk.stem import wordnet
-#from nltk.stem import WordNetLemmatizer
+from nltk.stem import wordnet
+from nltk.stem import WordNetLemmatizer
 #from nltk.tokenize import ToktokTokenizer
 # from nltk.tokenize import word_tokenize
 import sklearn 
@@ -52,8 +52,8 @@ def text_cleaner(x, lang="english"):
     # Remove stop words
     x = [word for word in x if word not in stop_words and len(word)>2]
     # Lemmatizer
-    # wn = nltk.WordNetLemmatizer()
-    # x = [wn.lemmatize(word) for word in x]
+    wn = nltk.WordNetLemmatizer()
+    x = [wn.lemmatize(word) for word in x]
     
     # Return cleaned text
     return x
