@@ -14,7 +14,7 @@ nltk.download('wordnet')
 nltk.download('stopwords')
 #nltk.download('all') 
 from nltk.corpus import stopwords
-# from nltk.stem import wordnet
+from nltk.stem import wordnet
 from nltk.stem import WordNetLemmatizer
 #from nltk.tokenize import ToktokTokenizer
 # from nltk.tokenize import word_tokenize
