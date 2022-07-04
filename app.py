@@ -8,16 +8,17 @@ import re
 # from deep_translator import GoogleTranslator
 # import spacy
 #import en_core_web_sm
-import nltk
+# import nltk
 #nltk.download('punkt')
-nltk.download('wordnet')
-nltk.download('stopwords')
+# nltk.download('wordnet')
+# nltk.download('stopwords')
 #nltk.download('all') 
-from nltk.corpus import stopwords
+# from nltk.corpus import stopwords
 # from nltk.stem import wordnet
-from nltk.stem import WordNetLemmatizer
+#from nltk.stem import WordNetLemmatizer
 #from nltk.tokenize import ToktokTokenizer
 # from nltk.tokenize import word_tokenize
+import sklearn 
 from joblib import load
 
 app = Flask(__name__)
@@ -45,13 +46,13 @@ def text_cleaner(x, lang="english"):
     # x = nltk.tokenize.word_tokenize(x)
     x = x.split(' ')
     # List of stop words in select language from NLTK
-    stop_words = stopwords.words(lang)
+    # stop_words = stopwords.words(lang)
     # Remove stop words
-    x = [word for word in x if word not in stop_words 
-         and len(word)>2]
+    # x = [word for word in x if word not in stop_words 
+    #     and len(word)>2]
     # Lemmatizer
-    wn = nltk.WordNetLemmatizer()
-    x = [wn.lemmatize(word) for word in x]
+    # wn = nltk.WordNetLemmatizer()
+    # x = [wn.lemmatize(word) for word in x]
     
     # Return cleaned text
     return x
