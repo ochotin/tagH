@@ -2,7 +2,7 @@
 # import requests
 from flask import Flask, request, render_template
 # import numpy as np
-# import re
+import re
 # from bs4 import BeautifulSoup
 # from langdetect import detect
 # from deep_translator import GoogleTranslator
@@ -32,15 +32,15 @@ def text_cleaner(x, lang="english"):
     # Remove unicode characters
     # x = x.encode("ascii", "ignore").decode()
     # Remove English contractions
-    # x = re.sub("\'\w+", '', x)
+    x = re.sub("\'\w+", '', x)
     # Remove ponctuation but not # (for C# for example)
-    # x = re.sub('[^\\w\\s#]', '', x)
+    x = re.sub('[^\\w\\s#]', '', x)
     # Remove links
-    # x = re.sub(r'http*\S+', '', x)
+    x = re.sub(r'http*\S+', '', x)
     # Remove numbers
-    # x = re.sub(r'\w*\d+\w*', '', x)
+    x = re.sub(r'\w*\d+\w*', '', x)
     # Remove extra spaces
-    # x = re.sub('\s+', ' ', x)
+    x = re.sub('\s+', ' ', x)
         
     # Tokenization
     # x = nltk.tokenize.word_tokenize(x)
