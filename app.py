@@ -52,8 +52,8 @@ def text_cleaner(x, lang="english"):
     # Remove stop words
     x = [word for word in x if word not in stop_words and len(word)>2]
     # Lemmatizer
-    # wn = nltk.WordNetLemmatizer()
-    # x = [wn.lemmatize(word) for word in x]
+    wn = WordNetLemmatizer()
+    x = [wn.lemmatize(word) for word in x]
     
     # Return cleaned text
     return x
